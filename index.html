@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>My first three.js app abc</title>
+		<title>My first three.js app</title>
 		<style>
 			body { margin: 0; }
 		</style>
@@ -10,7 +10,7 @@
 	<body>
 		<script type="module">
 			import * as THREE from 'https://unpkg.com/three/build/three.module.js';
-			import {OBJLoader} from 'three/addons/loaders/OBJLoader.js';
+			import {OBJLoader} from '/OBJLoader.js';
 
 			const scene = new THREE.Scene();
 			const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
@@ -18,12 +18,11 @@
 			const renderer = new THREE.WebGLRenderer();
 			renderer.setSize( window.innerWidth, window.innerHeight );
 			document.body.appendChild( renderer.domElement );
-
 			const objLoader = new OBJLoader();
-  			objLoader.load('resources/models/windmill/windmill.obj', (root) => {
-   			scene.add( root );
+  			objLoader.load('/model.obj', (root) => {
+    		scene.add(root);
  			 });
-			
+		
 
 			camera.position.z = 5;
 
